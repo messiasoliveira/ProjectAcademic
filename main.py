@@ -48,9 +48,9 @@ def actMenu(opc):
         print('\n === Show All === \n')    
         db.showAll()
     if opc==3 and db.getSizeLstRegisters()>0:
-        print("Vazio",db.getLstRegisters())
+        print(db.getLstRegisters())
 
-    if opc==4 and len(db.db.getSizeLstRegisters())>0:
+    if opc==4 and len(db.getSizeLstRegisters())>0:
         result=save(race)
         if result==True:
             race=[]
