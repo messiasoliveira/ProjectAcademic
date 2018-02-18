@@ -3,7 +3,7 @@ class Database:
     lstRegisters = []
     def __init__(self):
         self.__checkFileExist()
-        print(self.lstRegisters)
+        #print(self.lstRegisters)
     def __checkFileExist(self):
         if not(os.path.isfile('./database.txt')):
             file=open('./database.txt','w')
@@ -28,7 +28,8 @@ class Database:
 
     def getLstRegisters(self):
         return self.lstRegisters
-    
+    def getSizeLstRegisters(self):
+        return len(self.lstRegisters)
     def save(self,lstRegister):
         try:
             if len(lstRegister)>0:
