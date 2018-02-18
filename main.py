@@ -32,13 +32,13 @@ def showMenu():
     print('1 - Add run')
     print('2 - Show all races')
     db = database.Database()
-    if len(db.getLstRegisters())>0:
+    if db.getSizeLstRegisters()>0:
         print('3 - Show race no save')
         print('4 - Save')      
     print('9 - Exit')
     
 def actMenu(opc):
-    
+    db = database.Database()
     if opc==1:
         date = input('Inform the date of run [ex:2017/30/12]: ')
         run = createRun(date)
@@ -47,10 +47,10 @@ def actMenu(opc):
     if opc==2:
         print('\n === Show All === \n')    
         db.showAll()
-    if opc==3 and len(db.getLstRegisters())>0:
-        print(db.getLstRegisters())
-        
-    if opc==4 and len(db.db.getLstRegisters())>0:
+    if opc==3 and db.getSizeLstRegisters()>0:
+        print("Vazio",db.getLstRegisters())
+
+    if opc==4 and len(db.db.getSizeLstRegisters())>0:
         result=save(race)
         if result==True:
             race=[]
