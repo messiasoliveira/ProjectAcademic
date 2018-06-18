@@ -40,7 +40,10 @@ def showMenu():
 def actMenu(opc):
     db = database.Database()
     if opc==1:
-        date = input('Inform the date of run [ex:2017/30/12]: ')
+        date = None
+        while(date==None or date==""):
+            date = input('Inform the date of run [ex:2017/30/12]: ')
+        print(date)
         run = createRun(date)
         db.include(run)
         return None
